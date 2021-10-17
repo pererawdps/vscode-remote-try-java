@@ -9,6 +9,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello Remote World!" );
+        System.out.println( "Hello test edit!" );
+        System.out.println("Test edit");
     }
 }
