@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CreditCard",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dsa.chapterOne.CreditCard",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch CounterDemo",
             "request": "launch",
             "mainClass": "com.mycompany.app.dsa.chapterOne.CounterDemo",
