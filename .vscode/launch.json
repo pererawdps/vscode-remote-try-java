@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CounterDemo",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dsa.chapterOne.CounterDemo",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch MyTest",
             "request": "launch",
             "mainClass": "com.mycompany.app.mytestsrc1.MyTest",
