@@ -1,7 +1,7 @@
 package com.mycompany.app.dsa.chapterOne;
 
 
-class Counter{
+public class Counter{
     private int count; // a simple integer instance variable
     public Counter(){} // default constructor (count is 0)
     public Counter(int initial){count = initial;}// an alternate constructor
