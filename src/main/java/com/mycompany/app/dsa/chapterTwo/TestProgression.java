@@ -5,6 +5,9 @@ public class TestProgression {
        Progression prog;
        //test ArithmeticProgression
        System.out.print("Arithmetic progression with default increment:");
+       prog = new ArithmeticProgression();
+       prog.printProgression(10);
+       System.out.print("Arithmetic progression with default increment 5:");
        prog = new ArithmeticProgression(5);
        prog.printProgression(10);
        System.out.print("Arithmetic progression with start 2:");
