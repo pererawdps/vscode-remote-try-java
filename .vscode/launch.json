@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ExampleCatchingExc",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dsa.chapterTwo.ExampleCatchingExc",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestProgression",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dsa.chapterTwo.TestProgression",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch CreditCard",
             "request": "launch",
             "mainClass": "com.mycompany.app.dsa.chapterOne.CreditCard",
