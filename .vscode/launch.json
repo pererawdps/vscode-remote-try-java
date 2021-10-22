@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Pair",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dsa.chapterTwo.Pair",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch ObjectPair",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dsa.chapterTwo.ObjectPair",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch Student",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dsa.chapterTwo.Student",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch ExampleCatchingExc",
             "request": "launch",
             "mainClass": "com.mycompany.app.dsa.chapterTwo.ExampleCatchingExc",

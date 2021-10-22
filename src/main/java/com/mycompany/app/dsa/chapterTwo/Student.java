@@ -34,4 +34,14 @@ public String getID(){ return id;} //ID of the student
         // TODO Auto-generated method stub
         return age;
     }    
+
+    public static void main(String[] args) {
+        
+        Student s = new Student("910820320v","Sohan",30);
+        System.out.println(s);
+        boolean b = s.equals(new Student("910820320v","Sohan",30));
+        System.out.println(b);
+        boolean c = s.equals(new Student("910820320v","Sohan",30));
+        System.out.println(c);
+        }
 }
