@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Portfolio",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dsa.chapterTwo.Portfolio",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch Pair",
             "request": "launch",
             "mainClass": "com.mycompany.app.dsa.chapterTwo.Pair",
