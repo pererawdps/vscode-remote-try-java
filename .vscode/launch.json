@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GenericDemo",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dsa.chapterTwo.GenericDemo",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch Portfolio",
             "request": "launch",
             "mainClass": "com.mycompany.app.dsa.chapterTwo.Portfolio",
