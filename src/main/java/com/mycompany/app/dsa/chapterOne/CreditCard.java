@@ -1,6 +1,10 @@
 package com.mycompany.app.dsa.chapterOne;
 
 public class CreditCard {
+private static class Transaction{ /*details ommitted    */    }  
+
+//instance variable for a CreditCard
+Transaction[] history; //keep log of all transactions for this card
     //Instance variables:
     private String customer; // name of the customer (e.g "John Bowman")
     private String bank; //name of the bank (e.g "California Savings")
@@ -68,6 +72,5 @@ public class CreditCard {
         }
     }
         
-    
     
 }
