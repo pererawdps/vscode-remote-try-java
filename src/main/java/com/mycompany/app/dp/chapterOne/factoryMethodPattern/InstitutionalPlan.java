@@ -5,4 +5,5 @@ public class  InstitutionalPlan extends Plan{
      public void getRate(){   
          rate=5.50;  
     }   
- /end of InstitutionalPlan class.  
+}
+ // end of InstitutionalPlan class.  
