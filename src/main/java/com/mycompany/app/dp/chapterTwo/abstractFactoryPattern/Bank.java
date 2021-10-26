@@ -1,6 +1,6 @@
 package com.mycompany.app.dp.chapterTwo.abstractFactoryPattern;
 
 import java.io.*;     
-interface Bank{  
+public interface Bank{  
         String getBankName();  
 }  
