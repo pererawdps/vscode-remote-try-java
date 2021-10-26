@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch AbstractFactoryPatternExample",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dp.chapterTwo.abstractFactoryPattern.AbstractFactoryPatternExample",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch GenerateBill",
             "request": "launch",
             "mainClass": "com.mycompany.app.dp.chapterOne.factoryMethodPattern.GenerateBill",
