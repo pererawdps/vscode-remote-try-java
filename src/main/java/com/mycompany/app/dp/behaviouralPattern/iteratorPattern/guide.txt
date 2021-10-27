@@ -1,0 +1,91 @@
+
+Iterator Design Pattern
+Advantage of Iterator DP
+Usage of Iterator DP
+UML of Iterator DP
+Example of Iterator DP
+According to GoF, Iterator Pattern is used "to access the elements of an aggregate object sequentially without exposing its underlying implementation".
+
+The Iterator pattern is also known as Cursor.
+
+In collection framework, we are now using Iterator that is preferred over Enumeration.
+
+java.util.Iterator interface uses Iterator Design Pattern.
+Advantage of Iterator Pattern
+It supports variations in the traversal of a collection.
+It simplifies the interface to the collection.
+Usage of Iterator Pattern:
+It is used:
+
+When you want to access a collection of objects without exposing its internal representation.
+When there are multiple traversals of objects need to be supported in the collection.
+Example of Iterator Pattern
+Let's understand the example of iterator pattern pattern by the above UML diagram.
+
+UML for Iterator Pattern:
+Iterator Pattern UML
+Implementation of above UML
+Step 1
+Create a Iterartor interface.
+
+public interface Iterator {  
+    public boolean hasNext();  
+    public Object next();  
+}  
+Step 2
+Create a Container interface.
+
+public interface Container {  
+    public Iterator getIterator();  
+}// End of the Iterator interface.  
+Step 3
+Create a CollectionofNames class that will implement Container interface.
+
+File: CollectionofNames.java
+public class CollectionofNames implements Container {  
+public String name[]={"Ashwani Rajput", "Soono Jaiswal","Rishi Kumar","Rahul Mehta","Hemant Mishra"};   
+      
+@Override  
+    public Iterator getIterator() {  
+        return new CollectionofNamesIterate() ;  
+    }  
+    private class CollectionofNamesIterate implements Iterator{  
+        int i;  
+        @Override  
+        public boolean hasNext() {  
+            if (i<name.length){  
+                return true;  
+            }  
+            return false;  
+        }  
+        @Override  
+        public Object next() {  
+            if(this.hasNext()){  
+                return name[i++];  
+            }  
+            return null;      
+        }  
+    }  
+}  
+}  
+Step 4
+Create a IteratorPatternDemo class.
+
+File: IteratorPatternDemo.java
+public class IteratorPatternDemo {  
+    public static void main(String[] args) {  
+          CollectionofNames cmpnyRepository = new CollectionofNames();  
+            
+          for(Iterator iter = cmpnyRepository.getIterator(); iter.hasNext();){  
+              String name = (String)iter.next();  
+              System.out.println("Name : " + name);  
+           }      
+    }  
+}  
+download this example
+Output
+Name : Ashwani Rajput  
+Name : Soono Jaiswal  
+Name : Rishi Kumar  
+Name : Rahul Mehta  
+Name : Hemant Mishra  
