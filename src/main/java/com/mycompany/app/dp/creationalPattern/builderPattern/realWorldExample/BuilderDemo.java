@@ -1,33 +1,33 @@
 
-Real world example of builder pattern
+/*Real world example of builder pattern
 Let's see the step by step real world example of Builder Design Pattern.
 
 Step 1:Create an interface Item that represents the Pizza and Cold-drink.
 
-File: Item.java
-public  interface  Item   
+File: Item.java*/
+  interface  Item   
 {  
    public String name();  
     public String size();  
     public float price();  
 }// End of the interface Item.  
-Step 2:Create an abstract class Pizza that will implement to the interface Item.
+/*Step 2:Create an abstract class Pizza that will implement to the interface Item.
 
-File: Pizza.java
-public abstract class Pizza implements Item{  
+File: Pizza.java*/
+ abstract class Pizza implements Item{  
         @Override  
         public abstract float price();  
 }   
-Step 3:Create an abstract class ColdDrink that will implement to the interface Item.
+/*Step 3:Create an abstract class ColdDrink that will implement to the interface Item.
 
-File: ColdDrink.java
-public abstract class ColdDrink implements Item{  
+File: ColdDrink.java*/
+ abstract class ColdDrink implements Item{  
  @Override  
  public abstract float price();  
-Step 4:Create an abstract class VegPizza that will extend to the abstract class Pizza.
+/*Step 4:Create an abstract class VegPizza that will extend to the abstract class Pizza.
 
-File: VegPizza.java
-public abstract class VegPizza extends Pizza{  
+File: VegPizza.java*/
+ abstract class VegPizza extends Pizza{  
     @Override  
     public abstract float price();  
     @Override  
@@ -35,10 +35,10 @@ public abstract class VegPizza extends Pizza{
     @Override  
     public abstract  String size();  
 }// End of the abstract class VegPizza.  
-Step 5:Create an abstract class NonVegPizza that will extend to the abstract class Pizza.
+/*Step 5:Create an abstract class NonVegPizza that will extend to the abstract class Pizza.
 
-File: NonVegPizza.java
-public abstract class NonVegPizza extends Pizza{  
+File: NonVegPizza.java*/
+    abstract class NonVegPizza extends Pizza{  
     @Override  
     public abstract float price();  
     @Override  
@@ -46,10 +46,10 @@ public abstract class NonVegPizza extends Pizza{
     @Override  
     public abstract String size();  
 }// End of the abstract class NonVegPizza.  
-Step 6:Now, create concrete sub-classes SmallCheezePizza, MediumCheezePizza, LargeCheezePizza, ExtraLargeCheezePizza that will extend to the abstract class VegPizza.
+/*Step 6:Now, create concrete sub-classes SmallCheezePizza, MediumCheezePizza, LargeCheezePizza, ExtraLargeCheezePizza that will extend to the abstract class VegPizza.
 
-File: SmallCheezePizza.java
-public class SmallCheezePizza extends VegPizza{  
+File: SmallCheezePizza.java*/
+    class SmallCheezePizza extends VegPizza{  
     @Override  
     public float price() {  
         return 170.0f;  
@@ -63,8 +63,8 @@ public class SmallCheezePizza extends VegPizza{
        return "Small size";  
     }    
 }// End of the SmallCheezePizza class.  
-File: MediumCheezePizza.java
-public class MediumCheezePizza extends VegPizza{  
+//File: MediumCheezePizza.java
+ class MediumCheezePizza extends VegPizza{  
     @Override  
     public float price() {  
        return  220.f;  
@@ -78,11 +78,11 @@ public class MediumCheezePizza extends VegPizza{
      return "Medium Size";  
  }  
 }// End of the MediumCheezePizza class.  
-</textaera></div>  
+/*</textaera></div>  
   
 <div id="filename">File: LargeCheezePizza.java</div>  
-<div class="codeblock"><textarea  name="code" class="java">  
-public class LargeCheezePizza extends VegPizza{  
+<div class="codeblock"><textarea  name="code" class="java">  */
+ class LargeCheezePizza extends VegPizza{  
     @Override  
     public float price() {  
         return 260.0f;  
@@ -96,8 +96,8 @@ public class LargeCheezePizza extends VegPizza{
         return "Large Size";  
     }  
 }// End of the LargeCheezePizza class.  
-File: ExtraLargeCheezePizza.java
-public class ExtraLargeCheezePizza extends VegPizza{  
+//File: ExtraLargeCheezePizza.java
+ class ExtraLargeCheezePizza extends VegPizza{  
     @Override  
     public float price() {  
         return 300.f;  
@@ -111,10 +111,10 @@ public class ExtraLargeCheezePizza extends VegPizza{
         return "Extra-Large Size";  
     }  
 }// End of the ExtraLargeCheezePizza class.  
-Step 7:Now, similarly create concrete sub-classes SmallOnionPizza, MediumOnionPizza, LargeOnionPizza, ExtraLargeOnionPizza that will extend to the abstract class VegPizza.
+//Step 7:Now, similarly create concrete sub-classes SmallOnionPizza, MediumOnionPizza, LargeOnionPizza, ExtraLargeOnionPizza that will extend to the abstract class VegPizza.
 
-File: SmallOnionPizza.java
-public class SmallOnionPizza extends VegPizza {  
+//File: SmallOnionPizza.java
+ class SmallOnionPizza extends VegPizza {  
     @Override  
     public float price() {  
         return 120.0f;  
@@ -128,8 +128,8 @@ public class SmallOnionPizza extends VegPizza {
        return  "Small Size";  
     }    
 }// End of the SmallOnionPizza class.  
-File: MediumOnionPizza.java
-public class MediumOnionPizza extends VegPizza {  
+//File: MediumOnionPizza.java
+ class MediumOnionPizza extends VegPizza {  
     @Override  
     public float price() {  
         return 150.0f;  
@@ -143,8 +143,8 @@ public class MediumOnionPizza extends VegPizza {
        return  "Medium Size";  
     }    
 }// End of the MediumOnionPizza class.  
-File: LargeOnionPizza.java
-public class LargeOnionPizza extends  VegPizza{  
+//File: LargeOnionPizza.java
+ class LargeOnionPizza extends  VegPizza{  
     @Override  
     public float price() {  
         return 180.0f;  
@@ -158,8 +158,8 @@ public class LargeOnionPizza extends  VegPizza{
        return  "Large size";  
     }  
 }// End of the LargeOnionPizza class.  
-File: ExtraLargeOnionPizza.java
-public class ExtraLargeOnionPizza extends VegPizza {  
+//File: ExtraLargeOnionPizza.java
+ class ExtraLargeOnionPizza extends VegPizza {  
     @Override  
     public float price() {  
         return 200.0f;  
@@ -173,10 +173,10 @@ public class ExtraLargeOnionPizza extends VegPizza {
        return  "Extra-Large Size";  
     }  
 }// End of the ExtraLargeOnionPizza class  
-Step 8:Now, similarly create concrete sub-classes SmallMasalaPizza, MediumMasalaPizza, LargeMasalaPizza, ExtraLargeMasalaPizza that will extend to the abstract class VegPizza.
+//Step 8:Now, similarly create concrete sub-classes SmallMasalaPizza, MediumMasalaPizza, LargeMasalaPizza, ExtraLargeMasalaPizza that will extend to the abstract class VegPizza.
 
-File: SmallMasalaPizza.java
-public class SmallMasalaPizza extends VegPizza{  
+//File: SmallMasalaPizza.java
+ class SmallMasalaPizza extends VegPizza{  
     @Override  
     public float price() {  
         return 100.0f;  
@@ -190,8 +190,8 @@ public class SmallMasalaPizza extends VegPizza{
        return  "Samll Size";  
     }  
 }// End of the SmallMasalaPizza class  
-File: MediumMasalaPizza.java
-public class MediumMasalaPizza extends VegPizza {  
+//File: MediumMasalaPizza.java
+ class MediumMasalaPizza extends VegPizza {  
       
     @Override  
     public float price() {  
@@ -209,8 +209,8 @@ public class MediumMasalaPizza extends VegPizza {
     public String size() {  
        return  "Medium Size";  
     }  
-File: LargeMasalaPizza.java
-public class LargeMasalaPizza extends  VegPizza{  
+//File: LargeMasalaPizza.java
+ class LargeMasalaPizza extends  VegPizza{  
     @Override  
     public float price() {  
         return 150.0f;  
@@ -228,8 +228,8 @@ public class LargeMasalaPizza extends  VegPizza{
        return  "Large Size";  
     }  
 } //End of the LargeMasalaPizza class  
-File: ExtraLargeMasalaPizza.java
-public class ExtraLargeMasalaPizza extends VegPizza {  
+//File: ExtraLargeMasalaPizza.java
+ class ExtraLargeMasalaPizza extends VegPizza {  
     @Override  
     public float price() {  
         return 180.0f;  
@@ -247,10 +247,10 @@ public class ExtraLargeMasalaPizza extends VegPizza {
        return  "Extra-Large Size";  
     }  
 }// End of the ExtraLargeMasalaPizza class   
-Step 9:Now, create concrete sub-classes SmallNonVegPizza, MediumNonVegPizza, LargeNonVegPizza, ExtraLargeNonVegPizza that will extend to the abstract class NonVegPizza.
+//Step 9:Now, create concrete sub-classes SmallNonVegPizza, MediumNonVegPizza, LargeNonVegPizza, ExtraLargeNonVegPizza that will extend to the abstract class NonVegPizza.
 
-File: SmallNonVegPizza.java
-public class SmallNonVegPizza extends NonVegPizza {  
+//File: SmallNonVegPizza.java
+ class SmallNonVegPizza extends NonVegPizza {  
   
     @Override  
     public float price() {  
@@ -268,8 +268,8 @@ public class SmallNonVegPizza extends NonVegPizza {
     }  
       
 }// End of the SmallNonVegPizza class  
-File: MediumNonVegPizza.java
-public class MediumNonVegPizza extends NonVegPizza{  
+//File: MediumNonVegPizza.java
+ class MediumNonVegPizza extends NonVegPizza{  
       
     @Override  
     public float price() {  
@@ -285,8 +285,8 @@ public class MediumNonVegPizza extends NonVegPizza{
     public String size() {  
         return "Medium Size";  
     }  
-File: LargeNonVegPizza.java
-public class LargeNonVegPizza extends NonVegPizza{  
+//File: LargeNonVegPizza.java
+ class LargeNonVegPizza extends NonVegPizza{  
       
     @Override  
     public float price() {  
@@ -304,8 +304,8 @@ public class LargeNonVegPizza extends NonVegPizza{
     }  
       
 }// End of the LargeNonVegPizza class  
-File: ExtraLargeNonVegPizza.java
-public class ExtraLargeNonVegPizza extends NonVegPizza {  
+//File: ExtraLargeNonVegPizza.java
+ class ExtraLargeNonVegPizza extends NonVegPizza {  
     @Override  
     public float price() {  
         return 250.0f;  
@@ -324,10 +324,10 @@ public class ExtraLargeNonVegPizza extends NonVegPizza {
 }  
   
  // End of the ExtraLargeNonVegPizza class  
-Step 10:Now, create two abstract classes Pepsi and Coke that will extend abstract class ColdDrink.
+//Step 10:Now, create two abstract classes Pepsi and Coke that will extend abstract class ColdDrink.
 
-File: Pepsi.java
-public abstract class Pepsi extends ColdDrink {  
+//File: Pepsi.java
+ abstract class Pepsi extends ColdDrink {  
   
     @Override  
     public abstract  String name();  
@@ -339,8 +339,8 @@ public abstract class Pepsi extends ColdDrink {
     public abstract  float price();   
       
 }// End of the Pepsi class  
-File: Coke.java
-public abstract class Coke  extends ColdDrink {  
+//File: Coke.java
+ abstract class Coke  extends ColdDrink {  
   
     @Override  
     public abstract  String name();  
@@ -355,10 +355,10 @@ public abstract class Coke  extends ColdDrink {
   
 </textaea></div>  
   
-<p>Step 11:<b>Now, create concrete sub-classes SmallPepsi, MediumPepsi, LargePepsi that will extend to the abstract class Pepsi.</b></p>  
+/*<p>Step 11:<b>Now, create concrete sub-classes SmallPepsi, MediumPepsi, LargePepsi that will extend to the abstract class Pepsi.</b></p>  
 <div id="filename">File: SmallPepsi.java</div>  
-<div class="codeblock"><textarea  name="code" class="java">  
-public class SmallPepsi  extends Pepsi{  
+<div class="codeblock"><textarea  name="code" class="java">  */
+ class SmallPepsi  extends Pepsi{  
   
     @Override  
     public String name() {  
@@ -375,8 +375,8 @@ public class SmallPepsi  extends Pepsi{
         return "Small Size";  
     }     
 }// End of the SmallPepsi class  
-File: MediumPepsi.java
-public class MediumPepsi extends Pepsi {  
+//File: MediumPepsi.java
+ class MediumPepsi extends Pepsi {  
       
     @Override  
     public String name() {  
@@ -393,8 +393,8 @@ public class MediumPepsi extends Pepsi {
         return 35.0f;  
     }      
 }// End of the MediumPepsi class  
-File: LargePepsi.java
-public class LargePepsi extends Pepsi{  
+//File: LargePepsi.java
+ class LargePepsi extends Pepsi{  
     @Override  
     public String name() {  
        return "750 ml Pepsi";  
@@ -410,10 +410,10 @@ public class LargePepsi extends Pepsi{
         return 50.0f;  
     }  
 }// End of the LargePepsi class  
-Step 12:Now, create concrete sub-classes SmallCoke, MediumCoke, LargeCoke that will extend to the abstract class Coke.
+//Step 12:Now, create concrete sub-classes SmallCoke, MediumCoke, LargeCoke that will extend to the abstract class Coke.
 
-File: SmallCoke.java
-public class SmallCoke extends Coke{  
+//File: SmallCoke.java
+ class SmallCoke extends Coke{  
      
     @Override  
     public String name() {  
@@ -432,8 +432,8 @@ public class SmallCoke extends Coke{
         return  25.0f;  
     }  
  }// End of the SmallCoke class  
-File: MediumCoke.java
-public class MediumCoke extends Coke{  
+//File: MediumCoke.java
+ class MediumCoke extends Coke{  
       
     @Override  
     public String name() {  
@@ -452,8 +452,8 @@ public class MediumCoke extends Coke{
         return  35.0f;  
    }  
 }// End of the MediumCoke class  
-File: LargeCoke.java
-public class LargeCoke extends Coke {  
+//File: LargeCoke.java
+ class LargeCoke extends Coke {  
      @Override  
     public String name() {  
          return "750 ml Coke";    
@@ -472,14 +472,14 @@ public class LargeCoke extends Coke {
     }      
 }// End of the LargeCoke class  
   
-</textrea></div>  
+/*</textrea></div>  
   
 <p>Step 13:<b>Create an OrderedItems class that are having Item objects defined above.</b></p>  
 <div id="filename">File: OrderedItems.java</div>  
-<div class="codeblock"><textarea  name="code" class="java">  
+<div class="codeblock"><textarea  name="code" class="java">  */
 import java.util.ArrayList;  
 import java.util.List;  
-public class OrderedItems {  
+ class OrderedItems {  
      
     List<Item> items=new ArrayList<Item>();  
       
@@ -506,13 +506,13 @@ public class OrderedItems {
     }  
      
 }// End of the OrderedItems class  
-Step 14:Create an OrderBuilder class that will be responsible to create the objects of OrderedItems class.
+//Step 14:Create an OrderBuilder class that will be responsible to create the objects of OrderedItems class.
 
-File: OrdereBuilder.java
+//File: OrdereBuilder.java
 import java.io.BufferedReader;  
 import java.io.IOException;  
 import java.io.InputStreamReader;  
-public class OrderBuilder {  
+ class OrderBuilder {  
     public OrderedItems preparePizza() throws IOException{  
           
         OrderedItems itemsOrder=new OrderedItems();  
@@ -763,9 +763,9 @@ public class OrderBuilder {
                   return itemsOrder;  
   
           } //End of the preparePizza() method   
-Step 15:Create a BuilderDemo class that will use the OrderBuilder class.
+//Step 15:Create a BuilderDemo class that will use the OrderBuilder class.
 
-File: Prototype.java
+//File: Prototype.java
 import java.io.IOException;  
 public class BuilderDemo {  
   
@@ -783,6 +783,6 @@ public class BuilderDemo {
           
     }  
 }// End of the BuilderDemo class  
-download this Builder Pattern Example
-Output
-builderDesign Pattern output 1 builder Design Pattern output 1
+//download this Builder Pattern Example
+//Output
+//builderDesign Pattern output 1 builder Design Pattern output 1
