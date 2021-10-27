@@ -1,0 +1,336 @@
+
+Intercepting Filter Pattern
+An Intercepting Filter Pattern says that "if you want to intercept and manipulate a request and response before and after the request is processed".
+
+Usage:
+When you want centralization, common processing across requests, such as logging information about each request, compressing an outgoing response or checking the data encoding scheme of each request.
+When you want pre and post processing the components which are loosely coupled with core request-handling services to facilitate which are not suitable for addition and removal.
+Benefits:
+It provides central control with loosely coupled handlers.
+It improves reusability.
+UML for Intercepting Filter Pattern:
+Intercepting Filter Pattern
+Implementation of Intercepting Filter Pattern:
+Step 1
+
+Create a Login.html web page.
+
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="US-ASCII">  
+<title>Login Page</title>  
+</head>  
+<body>  
+   
+<form action="LoginServlet" method="post">  
+   
+Username: <input type="text" name="username">  
+<br><br>  
+Password: <input type="password" name="password">  
+<br><br>  
+<input type="submit" value="Login">  
+  
+</form>  
+</body>  
+Step 2
+
+Create a LoginServlet class.
+
+package sessions;  
+  
+import java.io.IOException;  
+import java.io.PrintWriter;  
+  
+import javax.servlet.RequestDispatcher;  
+import javax.servlet.ServletException;  
+import javax.servlet.annotation.WebServlet;  
+import javax.servlet.http.Cookie;  
+import javax.servlet.http.HttpServlet;  
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse;  
+import javax.servlet.http.HttpSession;  
+**  
+ * Servlet implementation class LoginServlet  
+ */  
+@WebServlet("/LoginServlet")  
+public class LoginServlet extends HttpServlet {  
+    private static final long serialVersionUID = 1L;  
+    private final String user = "admin";  
+    private final String password = "admin@1234";  
+  
+public LoginServlet() {  
+        super();  
+    }  
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
+          
+        // get request parameters for username and passwd  
+        String username = request.getParameter("username");  
+        String passwd = request.getParameter("password");  
+           
+        if(user.equals(username) && password.equals(passwd)){  
+            HttpSession session = request.getSession();  
+            session.setAttribute("user", "ashwani");  
+              
+            //setting session to expire in 1 hour  
+            session.setMaxInactiveInterval(60*60);  
+              
+            Cookie userName = new Cookie("user", user);  
+            userName.setMaxAge(60*60);  
+            response.addCookie(userName);  
+            response.sendRedirect("LoginSuccess.jsp");  
+        }else{  
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/Login.html");  
+            PrintWriter out= response.getWriter();  
+            out.println("<font color=red>Either user name or password is wrong.</font>");  
+            rd.include(request, response);  
+        }  
+    }  
+}//End of the LoginServlet class.  
+Step 3
+
+Create a LoginSuccess.jsp page.
+
+<%@ page language="java" contentType="text/html; charset=US-ASCII"  
+    pageEncoding="US-ASCII"%>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html>  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">  
+<title>Login Success Page</title>  
+</head>  
+<body>  
+<%  
+//allow access only if session exists  
+String user = (String) session.getAttribute("user");  
+String userName = null;  
+String sessionID = null;  
+Cookie[] cookies = request.getCookies();  
+if(cookies !=null){  
+for(Cookie cookie : cookies){  
+    if(cookie.getName().equals("user")) userName = cookie.getValue();  
+    if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();  
+}  
+}  
+%>  
+<h3>Hi <%=userName %>, Login successful.Your Session ID=<%=sessionID %></h3>  
+<br>  
+User=<%=user %>  
+<br>  
+<a href="CheckoutPage.jsp">Checkout Page</a><br>  
+<form action="LogoutServlet" method="post">  
+<input type="submit" value="Logout" >  
+</form>  
+</body>  
+</html>  
+Step 4
+
+Create an AdminPage.jsp page.
+
+<%@ page language="java" contentType="text/html; charset=US-ASCII"  
+    pageEncoding="US-ASCII"%>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html>  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">  
+<title>Login Success Page</title>  
+</head>  
+<body>  
+<%  
+String userName = null;  
+String sessionID = null;  
+Cookie[] cookies = request.getCookies();  
+if(cookies !=null){  
+for(Cookie cookie : cookies){  
+    if(cookie.getName().equals("user")) userName = cookie.getValue();  
+}  
+}  
+%>  
+<h3>Hi <%=userName %>, These services are only for you to take action.</h3>  
+<br>  
+<form action="LogoutServlet" method="post">  
+<input type="submit" value="Logout" >  
+</form>  
+</body>  
+</html>  
+Step 5
+
+Create an LogoutServlet class.
+
+package sessions;  
+  
+import java.io.IOException;  
+  
+import javax.servlet.ServletException;  
+import javax.servlet.annotation.WebServlet;  
+import javax.servlet.http.Cookie;  
+import javax.servlet.http.HttpServlet;  
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse;  
+import javax.servlet.http.HttpSession;  
+  
+/** 
+ * Servlet implementation class LogoutServlet 
+ */  
+@WebServlet("/LogoutServlet")  
+public class LogoutServlet extends HttpServlet {  
+    private static final long serialVersionUID = 1L;  
+      
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
+        response.setContentType("text/html");  
+        Cookie[] cookies = request.getCookies();  
+        if(cookies != null){  
+        for(Cookie cookie : cookies){  
+            if(cookie.getName().equals("JSESSIONID")){  
+                System.out.println("JSESSIONID="+cookie.getValue());  
+                break;  
+            }  
+        }  
+        }  
+        //invalidate the session if exists  
+        HttpSession session = request.getSession(false);  
+        System.out.println("User="+session.getAttribute("user"));  
+        if(session != null){  
+            session.invalidate();  
+        }  
+        response.sendRedirect("Login.html");  
+    }  
+  
+}//End of the LogoutServlet class  
+Step 6
+
+Create an AuthenticationFilter class.
+
+package filters;  
+  
+import java.io.IOException;  
+import javax.servlet.Filter;  
+import javax.servlet.FilterChain;  
+import javax.servlet.FilterConfig;  
+import javax.servlet.ServletContext;  
+import javax.servlet.ServletException;  
+import javax.servlet.ServletRequest;  
+import javax.servlet.ServletResponse;  
+import javax.servlet.annotation.WebFilter;  
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse;  
+import javax.servlet.http.HttpSession;  
+  
+/** 
+ * Servlet Filter implementation class AuthenticationFilter 
+ */  
+@WebFilter("/AuthenticationFilter")  
+public class AuthenticationFilter implements Filter {  
+  
+    private ServletContext context;  
+      
+    public void init(FilterConfig fConfig) throws ServletException {  
+        this.context = fConfig.getServletContext();  
+        this.context.log("AuthenticationFilter initialized");  
+    }  
+       
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {  
+   
+        HttpServletRequest req = (HttpServletRequest) request;  
+        HttpServletResponse res = (HttpServletResponse) response;  
+           
+        String uri = req.getRequestURI();  
+        this.context.log("Requested Resource::"+uri);  
+           
+        HttpSession session = req.getSession(false);  
+           
+        if(session == null && !(uri.endsWith("html") || uri.endsWith("LoginServlet"))){  
+            this.context.log("Unauthorized access request");  
+            res.sendRedirect("Login.html");  
+        }else{  
+            // pass the request along the filter chain  
+            chain.doFilter(request, response);  
+        }  
+    }  
+    public void destroy() {  
+        //close any resources here  
+    }  
+}//End of the AuthenticationFilter class  
+Step 7
+
+Create an RequestLoggingFilter class.
+
+package filters;  
+import java.io.IOException;  
+import java.util.Enumeration;  
+import javax.servlet.Filter;  
+import javax.servlet.FilterChain;  
+import javax.servlet.FilterConfig;  
+import javax.servlet.ServletContext;  
+import javax.servlet.ServletException;  
+import javax.servlet.ServletRequest;  
+import javax.servlet.ServletResponse;  
+import javax.servlet.annotation.WebFilter;  
+import javax.servlet.http.Cookie;  
+import javax.servlet.http.HttpServletRequest;  
+@WebFilter("/RequestLoggingFilter")  
+public class RequestLoggingFilter implements Filter {  
+private ServletContext context;  
+ public void init(FilterConfig fConfig) throws ServletException {  
+        this.context = fConfig.getServletContext();  
+        this.context.log("RequestLoggingFilter initialized");  
+    }  
+public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {  
+        HttpServletRequest req = (HttpServletRequest) request;  
+        Enumeration<String> params = req.getParameterNames();  
+while(params.hasMoreElements()){  
+            String name = params.nextElement();  
+            String value = request.getParameter(name);  
+            this.context.log(req.getRemoteAddr() + "::Request Params::{"+name+"="+value+"}");  
+        }  
+           
+        Cookie[] cookies = req.getCookies();  
+        if(cookies != null){  
+            for(Cookie cookie : cookies){  
+                this.context.log(req.getRemoteAddr() + "::Cookie::{"+cookie.getName()+","+cookie.getValue()+"}");  
+            }  
+        }  
+        // pass the request along the filter chain  
+        chain.doFilter(request, response);  
+    }  
+   
+    public void destroy() {  
+        //we can close resources here  
+    }  
+}// End of the RequestLoggingFilter class  
+Step 8
+
+Create a web.xml file.
+
+<?xml version="1.0" encoding="UTF-8"?>  
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">  
+  <display-name>ServletFilterExample</display-name>  
+  <welcome-file-list>  
+    <welcome-file>Login.html</welcome-file>  
+  </welcome-file-list>  
+  <filter>  
+    <filter-name>RequestLoggingFilter</filter-name>  
+    <filter-class>filters.RequestLoggingFilter</filter-class>  
+  </filter>  
+  <filter>  
+    <filter-name>AuthenticationFilter</filter-name>  
+    <filter-class>filters.AuthenticationFilter</filter-class>  
+  </filter>  
+  <filter-mapping>  
+    <filter-name>RequestLoggingFilter</filter-name>  
+    <url-pattern>/*</url-pattern>  
+    <dispatcher>REQUEST</dispatcher>  
+  </filter-mapping>  
+  <filter-mapping>  
+    <filter-name>AuthenticationFilter</filter-name>  
+    <url-pattern>/*</url-pattern>  
+  </filter-mapping>  
+</web-app>  
+Output:
+
+Intercepting Filter Pattern
+Intercepting Filter Pattern
+Intercepting Filter Pattern
+Intercepting Filter Pattern
+Download this Example
+
