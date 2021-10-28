@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BuilderDemo",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dp.creationalPattern.builderPattern.realWorldExample.BuilderDemo",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch BuilderDemo",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dp.creationalPattern.builderPattern.simplexample.BuilderDemo",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch AbstractFactoryPatternExample",
             "request": "launch",
             "mainClass": "com.mycompany.app.dp.chapterTwo.abstractFactoryPattern.AbstractFactoryPatternExample",

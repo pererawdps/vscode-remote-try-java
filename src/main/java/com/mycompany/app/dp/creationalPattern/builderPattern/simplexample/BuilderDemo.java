@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.creationalPattern.builderPattern.simplexample;
+
 /*Builder Design Pattern
 Builder Design Pattern
 Advantage of Builder DP
@@ -27,6 +29,8 @@ Create the CDBuilder class
 Create the BuilderDemo class
 1) Create Packing interface
 File: Packing.java*/
+import java.util.ArrayList;  
+import java.util.List;  
 interface Packing {  
             public String pack();  
             public int price();  
@@ -67,8 +71,7 @@ File: Sony.java*/
 }//End of the Samsung class.  
 //4) Create the CDType class
 //File: CDType.java
-import java.util.ArrayList;  
-import java.util.List;  
+
 class CDType {  
              private List<Packing> items=new ArrayList<Packing>();  
              public void addItem(Packing packs) {    
