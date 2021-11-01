@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.creationalPattern.objectPoolPattern;
+
 public class ExportingTask implements Runnable 
 {
 

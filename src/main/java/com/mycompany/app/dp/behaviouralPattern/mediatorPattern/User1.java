@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.mediatorPattern;
+
 
 public class User1 extends Participant {
 	

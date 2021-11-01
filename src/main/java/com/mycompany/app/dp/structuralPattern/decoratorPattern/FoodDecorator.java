@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.structuralPattern.decoratorPattern;
+
 
 public abstract class FoodDecorator implements Food
 

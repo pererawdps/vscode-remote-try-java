@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.structuralPattern.compositePattern;
+
 public class Accountant implements Employee
 {
 	

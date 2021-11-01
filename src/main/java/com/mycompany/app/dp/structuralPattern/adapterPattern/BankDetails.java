@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.structuralPattern.adapterPattern;
+
 
 // This is the adaptee class.
 

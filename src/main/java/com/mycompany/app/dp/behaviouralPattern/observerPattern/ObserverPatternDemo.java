@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.observerPattern;
+
 public class ObserverPatternDemo {
     public static void main(String[] args) {
         System.out.println("Enter Text >");

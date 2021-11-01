@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.structuralPattern.proxyPattern;
+
 
 public class RealInternetAccess implements OfficeInternetAccess {
 	

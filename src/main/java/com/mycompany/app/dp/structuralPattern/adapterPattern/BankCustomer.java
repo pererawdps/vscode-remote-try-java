@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.structuralPattern.adapterPattern;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

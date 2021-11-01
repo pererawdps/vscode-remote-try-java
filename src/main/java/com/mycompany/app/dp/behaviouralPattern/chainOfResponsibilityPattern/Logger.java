@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.chainOfResponsibilityPattern;
+
 public abstract class Logger {
 	
 	public static int OUTPUTINFO=1;

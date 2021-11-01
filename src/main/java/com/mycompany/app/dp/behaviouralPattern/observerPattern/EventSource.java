@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.observerPattern;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.chainOfResponsibilityPattern;
+
 
 public class ConsoleBasedLogger extends Logger {
 	

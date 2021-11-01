@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.structuralPattern.adapterPattern;
+
 
 
 // this is the target interface.

@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.structuralPattern.compositePattern;
+
 public class CompositePatternDemo {
 	
 	public static void main(String args[])

@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.mementoPattern;
+
 
 public class Originator {
 	

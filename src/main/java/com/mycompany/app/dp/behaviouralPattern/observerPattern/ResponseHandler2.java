@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.observerPattern;
+
 import java.util.Observable;
 import java.util.Observer;
 

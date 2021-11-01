@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.mementoPattern;
+
 import java.util.ArrayList;
 import java.util.List;
 

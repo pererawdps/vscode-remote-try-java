@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.structuralPattern.bridgePattern;
+
 
 public class QuestionFormat extends QuestionManager {
 

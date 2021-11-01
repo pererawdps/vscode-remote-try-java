@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.structuralPattern.compositePattern;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
