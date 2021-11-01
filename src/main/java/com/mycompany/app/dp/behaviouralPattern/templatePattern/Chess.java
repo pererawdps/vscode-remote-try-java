@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.templatePattern;
+
 
 public class Chess extends Game {
 	

@@ -1,3 +1,5 @@
+package com.mycompany.app.dp.behaviouralPattern.strategyPattern;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
