@@ -2,6 +2,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PrototypeDemo",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dp.creationalPattern.prototypePattern.PrototypeDemo",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch A",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dp.creationalPattern.singletonPatternExample.ealyInstantiation.A",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch A",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dp.creationalPattern.singletonPatternExample.lazyInstantiation.A",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch AbstractFactoryPatternExample",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dp.creationalPattern.abstractFactoryPattern.AbstractFactoryPatternExample",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch GenerateBill",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dp.creationalPattern.factoryMethodPattern.GenerateBill",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch IteratorPatternDemo",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.dp.behaviouralPattern.iteratorPattern.IteratorPatternDemo",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch BuilderDemo",
             "request": "launch",
             "mainClass": "com.mycompany.app.dp.creationalPattern.builderPattern.realWorldExample.BuilderDemo",

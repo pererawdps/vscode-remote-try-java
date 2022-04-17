@@ -11,4 +11,11 @@ public class A{
     public void doSomething(){  
     //write your code  
     }  
+    public static void main(String[] args) {
+        A a; 
+        A b;
+        a = A.getA();
+        b = A.getA();
+        System.out.println(a.equals(b));
+    }
    }  
