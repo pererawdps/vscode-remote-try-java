@@ -1,0 +1,9 @@
+Intercepting Filter Pattern
+An Intercepting Filter Pattern says that "if you want to intercept and manipulate a request and response before and after the request is processed".
+
+Usage:
+When you want centralization, common processing across requests, such as logging information about each request, compressing an outgoing response or checking the data encoding scheme of each request.
+When you want pre and post processing the components which are loosely coupled with core request-handling services to facilitate which are not suitable for addition and removal.
+Benefits:
+It provides central control with loosely coupled handlers.
+It improves reusability.

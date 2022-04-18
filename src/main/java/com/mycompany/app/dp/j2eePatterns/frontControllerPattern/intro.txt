@@ -1,0 +1,11 @@
+Front Controller Pattern
+A Front Controller Pattern says that if you want to provide the centralized request handling mechanism so that all the requests will be handled by a single handler". This handler can do the authentication or authorization or logging or tracking of request and then pass the requests to corresponding handlers.
+
+Usage:
+When you want to control the page flow and navigation.
+When you want to access and manage the data model.
+When you want to handle the business processing.
+Benefits:
+It reduces the duplication of code in JSP pages, especially in those cases where several resources require the same processing.
+It maintains and controls a web application more effectively.
+A web application of two-tier architecture, the recommended approach is front controller to deal with user requests.

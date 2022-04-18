@@ -1,0 +1,13 @@
+Memento Pattern
+A Memento Pattern says that "to restore the state of an object to its previous state". But it must do this without violating Encapsulation. Such case is useful in case of error or failure.
+
+The Memento pattern is also known as Token.
+
+Undo or backspace or ctrl+z is one of the most used operation in an editor. Memento design pattern is used to implement the undo operation. This is done by saving the current state of the object as it changes state.
+
+Benefits:
+It preserves encapsulation boundaries.
+It simplifies the originator.
+Usage:
+It is used in Undo and Redo operations in most software.
+It is also used in database transactions.
